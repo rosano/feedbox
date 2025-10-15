@@ -25,12 +25,16 @@
 
 		goLoad: (input) => window.document.addEventListener('DOMContentLoaded', () => mod._goLoad(input)),
 
-		goLoadROCO () {
-			window.document.addEventListener('DOMContentLoaded', () => Array.from(document.querySelectorAll('[data-feedbox]')).forEach(e => mod._goLoad({
+		_loadROCO (e) {
+			mod._goLoad({
 				parent: e.insertAdjacentElement('afterend', document.createElement('div')) ,
 				prefixCORS: 'https://cors.rosano.ca/',
 				feed: 'https://rosano.ca/blog/feed',
-			})))
+			});
+		},
+
+		goLoadROCO () {
+			window.document.addEventListener('DOMContentLoaded', () => Array.from(document.querySelectorAll('[data-feedbox]')).forEach(mod._loadROCO));
 		},
 
 		async _fetch (input, _debug) {
@@ -150,6 +154,7 @@
 
 	Object.assign(exports, mod, {
 		load: mod.goLoad,
+		_loadROCO: mod._loadROCO,
 	});
 
 	Object.defineProperty(exports, '__esModule', {
