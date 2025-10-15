@@ -8,9 +8,7 @@
 
 		// COMMAND
 
-		async goLoad (input, _debug) {
-			const _window = _debug || window;
-
+		_goLoad (input) {
 			class feedboxInstance {
 
 				constructor (params) {
@@ -22,18 +20,17 @@
 			}
 
 			const instance = new feedboxInstance(input);
-
-			(_window).document.addEventListener('DOMContentLoaded', function (e) {
-				instance.DOMContentLoaded();
-			});
+			instance.DOMContentLoaded();
 		},
 
+		goLoad: (input) => window.document.addEventListener('DOMContentLoaded', () => mod._goLoad(input)),
+
 		goLoadROCO () {
-			return Array.from(document.querySelectorAll('[data-feedbox]')).forEach(e => mod.goLoad({
+			window.document.addEventListener('DOMContentLoaded', () => Array.from(document.querySelectorAll('[data-feedbox]')).forEach(e => mod._goLoad({
 				parent: e.insertAdjacentElement('afterend', document.createElement('div')) ,
 				prefixCORS: 'https://cors.rosano.ca/',
 				feed: 'https://rosano.ca/blog/feed',
-			}));
+			})))
 		},
 
 		async _fetch (input, _debug) {
