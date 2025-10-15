@@ -21,9 +21,6 @@ feedbox.load({
 	limit: 10, // default: 5
 });
 </script>
-
-<!-- optional: include extra styles -->
-<script src="https://olsk.rosano.ca/OLSKDecor/master/ui-style.css"></script>
 ```
 
 ### Options

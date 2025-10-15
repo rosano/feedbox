@@ -12,14 +12,6 @@ describe('feedbox_Misc', function () {
 		});
 	});
 
-	describe('feedbox', function test_feedbox () {
-
-		it('classes OLSKDecorModule', function () {
-			return browser.assert.hasClass(feedbox, 'OLSKDecorModule');
-		});
-		
-	});
-
 	describe('feedboxButton', function test_feedboxButton () {
 
 		it('sets href', function () {

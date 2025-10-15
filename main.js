@@ -62,18 +62,78 @@
 		},
 
 		_populate (input) {
-			this.parent.innerHTML = `<div class="feedbox OLSKDecorModule">
-			<h2>
-				<span class="feedboxHeading">Latest updates</span>
-				<sup><a class="feedboxButton" href="${ this.feed }" title="Feed">(feed)</a></sup>
-			</h2>
-			<div class="feedboxList">
-				${ input.map( (e, i) => `
-					<a class="feedboxListItem" href="${ e.link }" target="_blank">${ e.title }</a>`
-					 + (!e.description || this.hideBlurb ? '' : `<p class="feedboxListItemBlurb">${ e.description }</p>`)
-					 + (i === input.length - 1 ? '' : `<hr/>`)
-				 ).join('') }
-			</div></div>`;
+			this.parent.innerHTML = `
+<div class="feedbox">
+<h2>
+	<span class="feedboxHeading">Latest updates</span>
+	<sup><a class="feedboxButton" href="${ this.feed }" title="Feed">(feed)</a></sup>
+</h2>
+<div class="feedboxList">
+	${ input.map( (e, i) => `
+		<a class="feedboxListItem" href="${ e.link }" target="_blank">${ e.title }</a>`
+		 + (!e.description || this.hideBlurb ? '' : `<p class="feedboxListItemBlurb">${ e.description }</p>`)
+		 + (i === input.length - 1 ? '' : `<hr/>`)
+	 ).join('') }
+</div></div>
+<style>
+.feedbox {
+	--foreground: #733132;
+	--spacing: 10px;
+
+	padding: var(--spacing);
+	border: 1px solid #f3e5e5;
+	border-radius: 5px;
+
+	margin: 80px 0;
+
+	background: #fffff1;
+	font-family: Lucida Grande, "Arial", sans-serif;
+}
+
+.feedbox * {
+	color: var(--foreground);	 
+}
+
+.feedbox h2 {
+	font-family: "Helvetica Neue";
+}
+
+.feedbox sup {
+	font-weight: lighter;
+	font-size: 70%;
+}
+
+.feedbox sup a {
+	margin: unset;
+}
+
+.feedbox hr  {
+	background: var(--foreground);
+	border-width: 0.5px;
+	margin: var(--spacing) 0;
+	opacity: 0.3;
+}
+
+.feedboxList a {
+	display: block;
+	width: 90%;
+
+	margin-bottom: 2px;
+
+	font-size: 90%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-decoration: none;
+}
+
+.feedboxList p {
+	margin: 0;
+
+	font-size: 85%;
+	opacity: 0.6;
+}
+</style>`;
 		},
 
 		// MESSAGE
