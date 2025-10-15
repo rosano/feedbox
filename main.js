@@ -29,7 +29,7 @@
 		},
 
 		goLoadROCO () {
-			return Array.from(document.querySelectorAll('script[data-feedbox]')).forEach(e => mod.goLoad({
+			return Array.from(document.querySelectorAll('[data-feedbox]')).forEach(e => mod.goLoad({
 				parent: e.insertAdjacentElement('afterend', document.createElement('div')) ,
 				prefixCORS: 'https://cors.rosano.ca/',
 				feed: 'https://rosano.ca/blog/feed',
