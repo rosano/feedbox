@@ -69,13 +69,13 @@
 			this.parent.innerHTML = `
 <div class="feedbox">
 <h2>
-	<span class="feedboxHeading">Latest updates</span>
-	<sup><a class="feedboxButton" href="${ this.feed }" title="Feed">(feed)</a></sup>
+	<span class="feedbox-heading">Latest updates</span>
+	<sup><a class="feedbox-button" href="${ this.feed }" title="Feed">(feed)</a></sup>
 </h2>
-<div class="feedboxList">
+<div class="feedbox-list">
 	${ input.map( (e, i) => `
-		<a class="feedboxListItem" href="${ e.link }" target="_blank">${ e.title }</a>`
-		 + (!e.description || this.hideBlurb ? '' : `<p class="feedboxListItemBlurb">${ e.description }</p>`)
+		<a class="feedbox-list-item" href="${ e.link }" target="_blank">${ e.title }</a>`
+		 + (!e.description || this.hideBlurb ? '' : `<p class="feedbox-list-item-blurb">${ e.description }</p>`)
 		 + (i === input.length - 1 ? '' : `<hr/>`)
 	 ).join('') }
 </div></div>
@@ -118,7 +118,7 @@
 	opacity: 0.3;
 }
 
-.feedboxList a {
+.feedbox-list a {
 	display: block;
 	width: 90%;
 
@@ -131,7 +131,7 @@
 	text-decoration: none;
 }
 
-.feedboxList p {
+.feedbox-list p {
 	margin: 0;
 
 	font-size: 85%;

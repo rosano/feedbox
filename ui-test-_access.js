@@ -3,13 +3,13 @@ const kDefaultPath = 'file://' + __dirname + '/ui-test-view.html';
 Object.entries({
 	feedbox: '.feedbox',
 
-	feedboxHeading: '.feedboxHeading',
+	feedbox-heading: '.feedbox-heading',
 
-	feedboxButton: '.feedboxButton',
+	feedbox-button: '.feedbox-button',
 
-	feedboxList: '.feedboxList',
-	feedboxListItem: '.feedboxListItem',
-	feedboxListItemBlurb: '.feedboxListItemBlurb',
+	feedbox-list: '.feedbox-list',
+	feedbox-list-item: '.feedbox-list-item',
+	feedbox-list-item-blurb: '.feedbox-list-item-blurb',
 }).map(function (e) {
 	return global[e.shift()] = e.pop();
 });
@@ -32,24 +32,24 @@ describe('feedbox_Access', function () {
 		return browser.assert.elements(feedbox, 1);
 	});
 
-	it('shows feedboxHeading', function () {
-		return browser.assert.elements(feedboxHeading, 1);
+	it('shows feedbox-heading', function () {
+		return browser.assert.elements(feedbox-heading, 1);
 	});
 
-	it('shows feedboxButton', function () {
-		return browser.assert.elements(feedboxButton, 1);
+	it('shows feedbox-button', function () {
+		return browser.assert.elements(feedbox-button, 1);
 	});
 
-	it('shows feedboxList', function () {
-		return browser.assert.elements(feedboxList, 1);
+	it('shows feedbox-list', function () {
+		return browser.assert.elements(feedbox-list, 1);
 	});
 
-	it('shows feedboxListItem', function () {
-		return browser.assert.elements(feedboxListItem, items.length);
+	it('shows feedbox-list-item', function () {
+		return browser.assert.elements(feedbox-list-item, items.length);
 	});
 
-	it('hides feedboxListItemBlurb', function () {
-		return browser.assert.elements(feedboxListItemBlurb, 0);
+	it('hides feedbox-list-item-blurb', function () {
+		return browser.assert.elements(feedbox-list-item-blurb, 0);
 	});
 
 	context('hasBlurb', function () {
@@ -62,8 +62,8 @@ describe('feedbox_Access', function () {
 			});
 		});
 
-		it('shows feedboxListItemBlurb', function () {
-			return browser.assert.elements(feedboxListItemBlurb, items.length);
+		it('shows feedbox-list-item-blurb', function () {
+			return browser.assert.elements(feedbox-list-item-blurb, items.length);
 		});
 	
 	});
@@ -79,8 +79,8 @@ describe('feedbox_Access', function () {
 			});
 		});
 
-		it('hides feedboxListItemBlurb', function () {
-			return browser.assert.elements(feedboxListItemBlurb, 0);
+		it('hides feedbox-list-item-blurb', function () {
+			return browser.assert.elements(feedbox-list-item-blurb, 0);
 		});
 	
 	});

@@ -12,22 +12,22 @@ describe('feedbox_Misc', function () {
 		});
 	});
 
-	describe('feedboxButton', function test_feedboxButton () {
+	describe('feedbox-button', function test_feedbox-button () {
 
 		it('sets href', function () {
-			return browser.assert.attribute(feedboxButton, 'href', feed);
+			return browser.assert.attribute(feedbox-button, 'href', feed);
 		});
 
 	});
 
-	describe('feedboxListItem', function test_feedboxListItem () {
+	describe('feedbox-list-item', function test_feedbox-list-item () {
 
 		it('sets text', function () {
-			return browser.assert.text(feedboxListItem, item.title);
+			return browser.assert.text(feedbox-list-item, item.title);
 		});
 
 		it('sets href', function () {
-			return browser.assert.attribute(feedboxListItem, 'href', item.link);
+			return browser.assert.attribute(feedbox-list-item, 'href', item.link);
 		});
 		
 	});

@@ -8,12 +8,12 @@ describe('feedbox_Localize', function () {
 		});
 	});
 
-	it('localizes feedboxHeading', function () {
-		return browser.assert.text(feedboxHeading, 'Latest updates');
+	it('localizes feedbox-heading', function () {
+		return browser.assert.text(feedbox-heading, 'Latest updates');
 	});
 
-	it('localizes feedboxButton', function() {
-		return browser.assert.attribute(feedboxButton, 'title', 'Feed');
+	it('localizes feedbox-button', function() {
+		return browser.assert.attribute(feedbox-button, 'title', 'Feed');
 	});
 
 });
