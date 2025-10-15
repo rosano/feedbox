@@ -9,13 +9,7 @@
 <div class="alfa-bravo-charlie OLSKDecor"></div>
 
 <script type="text/javascript">
-feedbox.load(Object.assign(Object.fromEntries(Array.from((new window.URLSearchParams(window.location.search)).entries()).map(function (e) {
-	if (['items'].includes(e[0])) {
-		e[1] = JSON.parse(e[1]);
-	}
-
-	return e;
-})), {
+feedbox.load(Object.assign(Object.fromEntries(new URLSearchParams(window.location.search)), {
 	parent: document.querySelector('.alfa-bravo-charlie'),
 	limit: 10,
 }));
