@@ -137,6 +137,12 @@
 	font-size: 85%;
 	opacity: 0.6;
 }
+
+/* OLSKDecor migration */
+.feedbox h2, .feedbox a {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
 </style>`;
 		},
 
